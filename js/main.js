@@ -4,10 +4,16 @@
 // var arrayBombe = [1,2,5,10,40,15]; //numeri randomici da geneare
 var arrayBombe = [];
 var maxBombe = 16;
+var difficult = parseInt(prompt('Inserisci una difficoltà da 0 a 2: '));
 // devo generare 16 numeri ma non devono esserci doppioni
 while (arrayBombe.length < maxBombe) {
-  console.log(arrayBombe.length);
-  var bomba = getRandom(1, 50);
+  if (isInRange(0, 3, difficult) == true && difficult == 0) {
+    var bomba = getRandom(1,100);
+  } else if (isInRange(0, 3, difficult) == true && difficult == 1) {
+    var bomba = getRandom(1,80);
+  } else if (isInRange(0, 3, difficult) == true && difficult == 2) {
+    var bomba = getRandom(1,50);
+  }
   if(inArray(arrayBombe, bomba) != true) {
     arrayBombe.push(bomba);
   }
